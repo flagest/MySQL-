@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS funtion CHAR SET=UTF8;
+USE function;
+CREATE TABLE IF NOT EXISTS user(
+id INT UNSIGNED AUTO_INCREMENT KEY,
+username VARCHAR(20) NOT NULL UNIQUE COMMENT '编号',
+age TINYINT UNSIGNED NOT NULL DEFAULT 108 COMMENT '年龄',
+sex ENUM('男','女','保密') DEFAULT '男' COMMENT '性别',
+addr VARCHAR(23) NOT NULL DEFAULT '北京',
+marride TINYINT(0) NOT NULL DEFAULT 0 COMMENT '0代表结婚,1代表未婚',
+salary FLOAT(8,2) NOT NULL DEFAULT 0 COMMENT '薪水'  
+)ENGINE=InnoDB CHARSET =UTF8;
+
+INSERT user VALUES(NULL,'张三',34,'男','上海',1,678),
+(NULL,'李四',34,'男','上海',1,678),
+(NULL,'王五',34,'男','上海',1,678),
+(NULL,'赵柳',34,'男','上海',1,678),
+(NULL,'天气',34,'男','上海',1,678),
+(NULL,'久久',34,'男','上海',1,678);
+SELECT * FROM user;USE function;
